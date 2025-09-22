@@ -3,7 +3,7 @@ package Laboratorio_3;
 /**
  * @author Diogo Ferreira 51084
  * @author Bruna da Costa 52488
- * @author
+ * @author Carlos Carrillo 52842
  * @author
  *
  */
