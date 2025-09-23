@@ -4,6 +4,6 @@
 .build
 .project
 .settings/
-targeot/
+/target/
 .idea/
 .target/

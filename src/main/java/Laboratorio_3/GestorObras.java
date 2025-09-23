@@ -1,8 +1,6 @@
 package Laboratorio_3;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class GestorObras {
@@ -16,6 +14,7 @@ public class GestorObras {
 
     try {
       choice = in.nextInt();
+      in.nextLine();
     } catch (Exception e) {
       System.out.println("Invalid input");
     }
@@ -29,29 +28,27 @@ public class GestorObras {
     try {
       System.out.println("Introduza o ano: ");
       ano = in.nextInt();
+      in.nextLine();
     } catch (Exception e) {
       System.out.println("Invalid input");
     }
     if (choice == 1) {
 
-      String tecnica = "";
-
-      System.out.println(String.format("Escolha a tecnica\n 1 ", TecnicaPintura.OLEO, "\n 2", TecnicaPintura.ACRILICO,
-          "\n 3", TecnicaPintura.AQUARELA));
+      System.out.printf("Escolha a tecnica\n 1. %s\n 2. %s\n 3. %s\n",
+          TecnicaPintura.OLEO, TecnicaPintura.ACRILICO, TecnicaPintura.AQUARELA);
 
       int choiceTecnica = in.nextInt();
+      in.nextLine();
 
       if (choiceTecnica == 1) {
         System.out.println("Tipo de tela: ");
         String tela = in.nextLine();
 
         obraCriada = new PinturaOleo(titulo, autor, ano, TecnicaPintura.OLEO, tela);
-      }
-      if (choiceTecnica == 2) {
+      } else if (choiceTecnica == 2) {
 
         obraCriada = new Pintura(titulo, autor, ano, TecnicaPintura.ACRILICO);
-      }
-      if (choiceTecnica == 3) {
+      } else if (choiceTecnica == 3) {
 
         obraCriada = new Pintura(titulo, autor, ano, TecnicaPintura.AQUARELA);
       } else {
@@ -59,11 +56,12 @@ public class GestorObras {
         return;
       }
       addObra(obraCriada);
+    } else if (choice == 2) {
+      System.out.println("Material escolhido: ");
+      String material = in.nextLine();
+      obraCriada = new Escultura(titulo, autor, ano, material);
+      addObra(obraCriada);
     }
-    System.out.println("Material escolhido: ");
-    String material = in.nextLine();
-    obraCriada = new Escultura(titulo, autor, ano, material);
-
   }
 
   private void addObra(Obra obra) {
@@ -82,10 +80,10 @@ public class GestorObras {
     Scanner in = new Scanner(System.in);
     titulo = in.nextLine();
     for (Obra obra : listaObras) {
-      if (titulo.equals(obra.getTitulo()))
-        ;
-      System.out.println(obra.toString());
-      return;
+      if (titulo.equals(obra.getTitulo())) {
+        System.out.println(obra.toString());
+        return;
+      }
     }
     System.out.println("Obra não encontrada");
   }
@@ -110,7 +108,7 @@ public class GestorObras {
     tecnica = in.nextLine();
     for (Obra obra : listaObras) {
       if (obra instanceof PinturaOleo) {
-        if (((PinturaOleo) obra).getTela() == tecnica) {
+        if (((PinturaOleo) obra).getTela().equals(tecnica)) {
           System.out.println(obra.toString());
           return;
         }
@@ -143,7 +141,7 @@ public class GestorObras {
     System.out.println("Esculturas: ");
     int esculturaCounter = 0;
     for (Obra obra : listaObras) {
-      if (obra instanceof PinturaOleo) {
+      if (obra instanceof Escultura) {
         System.out.println(obra.toString());
         esculturaCounter++;
       }
