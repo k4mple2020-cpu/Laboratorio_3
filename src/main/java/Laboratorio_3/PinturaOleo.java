@@ -1,6 +1,6 @@
 package Laboratorio_3;
 
-public class PinturaOleo {
+public class PinturaOleo extends Pintura{
 
   
 }

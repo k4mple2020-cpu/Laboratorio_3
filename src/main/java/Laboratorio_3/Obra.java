@@ -37,11 +37,12 @@ public class Obra {
 			return "Obra [titulo=" + titulo + ", autor=" + autor + ", ano=" + ano + "]";
 		}
 
-	
-		
-		
-		
+
+		protected void imprimirDetalhes() {
+			System.out.println(this.toString());
+
 	}
+}
 
 
 
