@@ -1,10 +1,10 @@
 package Laboratorio_3;
 
 public enum TecnicaPintura {
-    AQUARELA,
-    OLEO,
-    ACRILICO,
+  AQUARELA,
+  OLEO,
+  ACRILICO,
 
-    TecnicaPintura() {
-    }
+  TecnicaPintura() {
+  }
 }
