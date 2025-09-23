@@ -37,8 +37,11 @@ public class Obra {
 			return "Obra [titulo=" + titulo + ", autor=" + autor + ", ano=" + ano + "]";
 		}
 
+		public boolean equals(Obra obra) {
+			return this.titulo == obra.titulo || this.autor == obra.autor;
+		}
 
-		protected void imprimirDetalhes() {
+	protected void imprimirDetalhes() {
 			System.out.println(this.toString());
 
 	}

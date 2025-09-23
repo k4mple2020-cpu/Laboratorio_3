@@ -1,10 +1,10 @@
 package Laboratorio_3;
 
 public enum TecnicaPintura {
-    AQUARELA("Aquarela"),
-    OLEO("Oleo"),
-    ACRILICO("Acrilico");
+    AQUARELA,
+    OLEO,
+    ACRILICO,
 
-    TecnicaPintura(String acrilico) {
+    TecnicaPintura() {
     }
 }
