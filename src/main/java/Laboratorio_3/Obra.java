@@ -1,7 +1,8 @@
 package Laboratorio_3;
 
+
 public class Obra {
-		
+
 		String titulo;
 		String autor;
 		int ano;
@@ -14,7 +15,7 @@ public class Obra {
 			this.autor = autor;
 			this.ano = ano;
 		}
-
+  
 		public Obra(String titulo, String autor) {
 			this.titulo = titulo;
 			this.autor = autor;
@@ -43,5 +44,4 @@ public class Obra {
 	}
 
 
-  
 

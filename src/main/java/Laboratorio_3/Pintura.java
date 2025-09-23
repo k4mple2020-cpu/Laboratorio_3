@@ -2,6 +2,7 @@ package Laboratorio_3;
 
 
 
+
 public class Pintura extends Obra{
 	
 		String tecnica;
@@ -34,5 +35,4 @@ public class Pintura extends Obra{
 		
 	
 
-  
 }
