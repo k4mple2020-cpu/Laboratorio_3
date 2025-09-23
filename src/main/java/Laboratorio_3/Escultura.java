@@ -14,8 +14,8 @@ public class Escultura extends Obra {
 	}
 	@Override
 	public void imprimirDetalhes() {
+		System.out.println ("Material:" + this.material);
 		super.imprimirDetalhes();
-System.out.println ("Material:" + this.material);
 	}
 }
 	
